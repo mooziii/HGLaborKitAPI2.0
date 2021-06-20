@@ -180,6 +180,7 @@ public final class KitApi {
         kits.add(CookiemonsterKit.INSTANCE);
         kits.add(GripperKit.INSTANCE);
         kits.add(PenguinKit.INSTANCE);
+        kits.add(SlimeKit.INSTANCE);
         //kits.add(PirateKit.INSTANCE);
         //kits.add(BeamKit.INSTANCE);
         //sort alphabetically
