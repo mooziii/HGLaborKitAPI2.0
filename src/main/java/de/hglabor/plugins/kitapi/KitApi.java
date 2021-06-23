@@ -181,6 +181,7 @@ public final class KitApi {
         kits.add(GripperKit.INSTANCE);
         kits.add(PenguinKit.INSTANCE);
         kits.add(PerfectKit.INSTANCE);
+        kits.add(SlimeKit.INSTANCE);
         //kits.add(PirateKit.INSTANCE);
         //kits.add(BeamKit.INSTANCE);
         //sort alphabetically
