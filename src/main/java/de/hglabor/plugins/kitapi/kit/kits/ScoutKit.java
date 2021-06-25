@@ -53,7 +53,7 @@ public class ScoutKit extends AbstractKit {
         Player player = event.getEntity();
         if(!event.getCause().equals(EntityDamageEvent.DamageCause.FALL))return;
         if (player.hasPotionEffect(PotionEffectType.SPEED)){
-            if(event.getFinalDamage()>4){
+            if(event.getFinalDamage() > 4){
                 event.setDamage(4);
             }
         }
