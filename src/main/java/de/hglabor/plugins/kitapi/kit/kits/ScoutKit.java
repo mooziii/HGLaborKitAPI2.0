@@ -49,7 +49,6 @@ public class ScoutKit extends AbstractKit {
     @KitEvent
     @Override
     public void onEntityDamage(EntityDamageEvent event){
-        if(!(event.getEntity() instanceof Player))return;
         Player player = event.getEntity();
         if(!event.getCause().equals(EntityDamageEvent.DamageCause.FALL))return;
         if (player.hasPotionEffect(PotionEffectType.SPEED)){
