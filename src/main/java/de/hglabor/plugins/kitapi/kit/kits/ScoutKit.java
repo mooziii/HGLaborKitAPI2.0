@@ -45,6 +45,19 @@ public class ScoutKit extends AbstractKit {
         this.setMainKitItem(createScoutPotion(), potionAmount);
         this.setDisplayItem(createScoutPotion());
     }
+    
+    @KitEvent
+    @Override
+    public void onEntityDamage(EntityDamageEvent event){
+        if(!(event.getEntity() instanceof Player))return;
+        Player player = event.getEntity();
+        if(!event.getCause().equals(EntityDamageEvent.DamageCause.FALL))return;
+        if (player.hasPotionEffect(PotionEffectType.SPEED)){
+            if(event.getFinalDamage()>4){
+                event.setDamage(4);
+            }
+        }
+    }
 
     @Override
     public void onEnable(KitPlayer kitPlayer) {
