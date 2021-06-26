@@ -10,10 +10,7 @@ import de.hglabor.utils.localization.Localization;
 import de.hglabor.utils.noriskutils.ChatUtils;
 import de.hglabor.utils.noriskutils.ItemBuilder;
 import de.hglabor.utils.noriskutils.RandomCollection;
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.Sound;
+import org.bukkit.*;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.*;
 import org.bukkit.event.Listener;
@@ -294,7 +291,8 @@ public class GamblerKit extends AbstractKit implements Listener {
             horse.getInventory().setSaddle(new ItemStack(Material.SADDLE));
         });
 
-        cantBeClassified.add("§7Normie§a+", 0.00003, p -> { // wenn das jemand holt gib ich dem 20 euro
+        cantBeClassified.add("§7Normie§a+", 0.0005, p -> {
+            ChatUtils.broadcastMessage(ChatColor.GREEN + p.getName() + " won Normie+");
             p.sendMessage(Localization.INSTANCE.getMessage("gambler.wonNormiePlus", ChatUtils.locale(p)));
         });
 
