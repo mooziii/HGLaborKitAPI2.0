@@ -15,6 +15,16 @@ public final class ReflectionUtils {
     private ReflectionUtils() {
     }
 
+    @SuppressWarnings("unchecked")
+    public static <A> A stringToEnum(String string, Class<? extends Enum<?>> enumClazz) {
+        for (Enum<?> a : enumClazz.getEnumConstants()) {
+            if(a.toString().equalsIgnoreCase(string)) {
+                return (A) a;
+            }
+        }
+        return null;
+    }
+
     public static Object get(Field field, Object obj) {
         field.setAccessible(true);
         try {

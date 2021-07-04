@@ -213,7 +213,7 @@ public class KitSettingsCommand {
         List<Class<? extends Annotation>> kitAnnotations = List.of(
                 DoubleArg.class, FloatArg.class, IntArg.class, BoolArg.class,
                 LongArg.class, MaterialArg.class, StringArg.class, PotionTypeArg.class,
-                EntityArg.class, SoundArg.class);
+                EntityArg.class, SoundArg.class, EnumArg.class);
         List<String> names = new ArrayList<>();
         for (Field field : Utils.getAllFields(kit)) {
             for (Annotation annotation : field.getAnnotations()) {
