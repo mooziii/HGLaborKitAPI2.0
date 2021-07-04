@@ -90,7 +90,7 @@ public class EnumPickerComponent<E extends Enum<?>> extends ButtonComponent {
             Enum<?> entry = entries[e];
             try {
                 enumSettingScreen.withComponent(i, new PickableComponent<>(
-                        currentValue.equals(entry) ? Material.FILLED_MAP : Material.PAPER,
+                        ((entry instanceof Material) ? Material.valueOf(entry.name()) : currentValue.equals(entry) ? Material.FILLED_MAP : Material.PAPER),
                         currentValue.getClass().getField("currentValue"),
                         entry,
                         parentScreen
