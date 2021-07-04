@@ -129,7 +129,7 @@ public class SliderComponent<T> extends ButtonComponent implements ValueComponen
         }
         ItemStack itemStack = event.getCurrentItem();
         ItemMeta meta = itemStack.getItemMeta();
-        meta.setLore(Arrays.asList((description+"##&7##&7Current: &e" + getValue() + "##&7Min: &e" + minValue + "##&7Max: &e" + maxValue + "##&7Default: &e" + defaultValue + "##&a##&7Left click: &e+" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Right click:&e-" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Middle click: &ereset").replace("&", "§").split("##")));
+        meta.setLore(Arrays.asList((description+"##&7##&7Current: &e" + getValue() + "##&7Min: &e" + minValue + "##&7Max: &e" + maxValue + "##&7Default: &e" + defaultValue + "##&a##&7Left click: &e+" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Right click: &e-" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Middle click: &ereset").replace("&", "§").split("##")));
         itemStack.setItemMeta(meta);
     }
 
