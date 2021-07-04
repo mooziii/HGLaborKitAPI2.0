@@ -12,14 +12,14 @@ import java.lang.reflect.Field;
 
 public class PickableComponent<I> extends ButtonComponent {
 
-    private Field fieldToChange;
+    private EnumPickerComponent<?> pickerComponent;
     private final I changeTo;
     private final GuiBuilder parent;
 
-    public PickableComponent(Material icon, Field fieldToChange, I changeTo, GuiBuilder parent) {
+    public PickableComponent(Material icon, EnumPickerComponent<?> pickerComponent, I changeTo, GuiBuilder parent) {
         super(changeTo.toString(), "&7&oClick to select &f&o" + changeTo, icon, null);
         this.changeTo = changeTo;
-        this.fieldToChange = fieldToChange;
+        this.pickerComponent = pickerComponent;
         this.parent = parent;
     }
 
@@ -27,7 +27,7 @@ public class PickableComponent<I> extends ButtonComponent {
     public void press(InventoryClickEvent event) {
         Player player = (Player) event.getWhoClicked();
         player.playSound(player.getLocation(), Sound.UI_BUTTON_CLICK, 1.0f, 1.0f);
-        ReflectionUtils.set(fieldToChange, fieldToChange.getClass(), changeTo);
+        pickerComponent.setValue(changeTo);
         player.openInventory(parent.build());
     }
 }

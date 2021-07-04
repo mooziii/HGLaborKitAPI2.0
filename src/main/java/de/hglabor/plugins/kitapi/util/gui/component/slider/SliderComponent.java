@@ -1,5 +1,6 @@
 package de.hglabor.plugins.kitapi.util.gui.component.slider;
 
+import de.hglabor.plugins.kitapi.util.gui.component.ValueComponent;
 import de.hglabor.plugins.kitapi.util.gui.component.button.ButtonComponent;
 import de.hglabor.utils.noriskutils.ItemBuilder;
 import org.bukkit.Material;
@@ -12,7 +13,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.Arrays;
 
-public class SliderComponent<T> extends ButtonComponent {
+public class SliderComponent<T> extends ButtonComponent implements ValueComponent {
 
     private final String description;
     private final T defaultValue;
@@ -22,7 +23,7 @@ public class SliderComponent<T> extends ButtonComponent {
     private final SliderComponent<T> instance = this;
 
     public SliderComponent(String name, String description, Material icon, T defaultValue, T minValue, T maxValue) {
-        super(name, description+"##&7##&7Current: &e" + defaultValue + "##&7Min: &e" + minValue + "##&7Max: &e" + maxValue + "##&7Default: &e" + defaultValue + "##&a##&7Left click: &e+" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Right click:&e-" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Middle click: &ereset", icon, null);
+        super(name, description+"##&7##&7Current: &e" + defaultValue + "##&7Min: &e" + minValue + "##&7Max: &e" + maxValue + "##&7Default: &e" + defaultValue + "##&a##&7Left click: &e+" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Right click: &e-" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Middle click: &ereset", icon, null);
         this.defaultValue = defaultValue;
         this.minValue = minValue;
         this.maxValue = maxValue;
@@ -31,7 +32,7 @@ public class SliderComponent<T> extends ButtonComponent {
     }
 
     public SliderComponent(String name, String description, ItemBuilder icon, T defaultValue, T minValue, T maxValue) {
-        super(name, description+"##&7##&7Current: &e" + defaultValue + "##&7Min: &e" + minValue + "##&7Max: &e" + maxValue + "##&7Default: &e" + defaultValue + "##&a##&7Left click: &e+" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Right click:&e-" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Middle click: &ereset", icon, null);
+        super(name, description+"##&7##&7Current: &e" + defaultValue + "##&7Min: &e" + minValue + "##&7Max: &e" + maxValue + "##&7Default: &e" + defaultValue + "##&a##&7Left click: &e+" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Right click: &e-" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Middle click: &ereset", icon, null);
         this.defaultValue = defaultValue;
         this.minValue = minValue;
         this.maxValue = maxValue;
@@ -40,7 +41,7 @@ public class SliderComponent<T> extends ButtonComponent {
     }
 
     public SliderComponent(String name, String description, ItemStack icon, T defaultValue, T minValue, T maxValue) {
-        super(name, description+"##&7##&7Current: &e" + defaultValue + "##&7Min: &e" + minValue + "##&7Max: &e" + maxValue + "##&7Default: &e" + defaultValue + "##&a##&7Left click: &e+" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Right click:&e-" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Middle click: &ereset", icon, null);
+        super(name, description+"##&7##&7Current: &e" + defaultValue + "##&7Min: &e" + minValue + "##&7Max: &e" + maxValue + "##&7Default: &e" + defaultValue + "##&a##&7Left click: &e+" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Right click: &e-" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Middle click: &ereset", icon, null);
         this.defaultValue = defaultValue;
         this.minValue = minValue;
         this.maxValue = maxValue;
@@ -49,7 +50,7 @@ public class SliderComponent<T> extends ButtonComponent {
     }
 
     public SliderComponent(String name, String description, Material icon, T defaultValue, T minValue, T maxValue, T currentValue) {
-        super(name, description+"##&7##&7Current: &e" + currentValue + "##&7Min: &e" + minValue + "##&7Max: &e" + maxValue + "##&7Default: &e" + defaultValue + "##&a##&7Left click: &e+" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Right click:&e-" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Middle click: &ereset", icon, null);
+        super(name, description+"##&7##&7Current: &e" + currentValue + "##&7Min: &e" + minValue + "##&7Max: &e" + maxValue + "##&7Default: &e" + defaultValue + "##&a##&7Left click: &e+" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Right click: &e-" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Middle click: &ereset", icon, null);
         this.defaultValue = defaultValue;
         this.minValue = minValue;
         this.maxValue = maxValue;
@@ -58,7 +59,7 @@ public class SliderComponent<T> extends ButtonComponent {
     }
 
     public SliderComponent(String name, String description, ItemBuilder icon, T defaultValue, T minValue, T maxValue, T currentValue) {
-        super(name, description+"##&7##&7Current: &e" + currentValue + "##&7Min: &e" + minValue + "##&7Max: &e" + maxValue + "##&7Default: &e" + defaultValue + "##&a##&7Left click: &e+" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Right click:&e-" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Middle click: &ereset", icon, null);
+        super(name, description+"##&7##&7Current: &e" + currentValue + "##&7Min: &e" + minValue + "##&7Max: &e" + maxValue + "##&7Default: &e" + defaultValue + "##&a##&7Left click: &e+" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Right click: &e-" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Middle click: &ereset", icon, null);
         this.defaultValue = defaultValue;
         this.minValue = minValue;
         this.maxValue = maxValue;
@@ -67,7 +68,7 @@ public class SliderComponent<T> extends ButtonComponent {
     }
 
     public SliderComponent(String name, String description, ItemStack icon, T defaultValue, T minValue, T maxValue, T currentValue) {
-        super(name, description+"##&7##&7Current: &e" + currentValue + "##&7Min: &e" + minValue + "##&7Max: &e" + maxValue + "##&7Default: &e" + defaultValue + "##&a##&7Left click: &e+" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Right click:&e-" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Middle click: &ereset", icon, null);
+        super(name, description+"##&7##&7Current: &e" + currentValue + "##&7Min: &e" + minValue + "##&7Max: &e" + maxValue + "##&7Default: &e" + defaultValue + "##&a##&7Left click: &e+" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Right click: &e-" + ((defaultValue instanceof Integer) ? "1" : "0.5") + "##&7Middle click: &ereset", icon, null);
         this.defaultValue = defaultValue;
         this.minValue = minValue;
         this.maxValue = maxValue;
@@ -132,11 +133,15 @@ public class SliderComponent<T> extends ButtonComponent {
         itemStack.setItemMeta(meta);
     }
 
-    public void setValue(T value) {
-        this.currentValue = value;
+    @SuppressWarnings("unchecked")
+    @Override
+    public <K> void setValue(K value) {
+        this.currentValue = (T) value;
     }
 
-    public T getValue() {
-        return this.currentValue;
+    @SuppressWarnings("unchecked")
+    @Override
+    public <K> K getValue() {
+        return (K) currentValue;
     }
 }
