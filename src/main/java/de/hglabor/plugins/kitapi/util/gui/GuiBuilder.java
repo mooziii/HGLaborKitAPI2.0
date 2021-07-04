@@ -36,7 +36,7 @@ public final class GuiBuilder {
         this.player = player;
     }
 
-    public GuiBuilder withPlaceHolder(Material material, int slot) {
+    public GuiBuilder withPlaceholder(Material material, int slot) {
         items.put(slot, new ItemBuilder(material).setName(" ").build());
         return this;
     }
@@ -54,6 +54,13 @@ public final class GuiBuilder {
 
     public GuiBuilder withSlots(int slots) {
         this.slots = slots;
+        return this;
+    }
+
+    public GuiBuilder fillWith(ItemStack itemStack) {
+        for (int a = 0; a < slots; a++) {
+            withItem(itemStack, a);
+        }
         return this;
     }
 
