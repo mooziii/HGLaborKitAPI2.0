@@ -87,31 +87,43 @@ public class SliderComponent<T> extends ButtonComponent {
         if(clickType.isRightClick()) {
             if(defaultValue instanceof Integer) {
                 Integer current = (Integer) getValue();
-                current-=1;
-                setValue((T) current);
+                if(current-1 >= (int) minValue) {
+                    current-=1;
+                    setValue((T) current);
+                }
             } else if(defaultValue instanceof Float) {
                 Float current = (Float) getValue();
-                current-=0.5F;
-                setValue((T) current);
+                if(current-0.5F >= (float) minValue) {
+                    current -= 0.5F;
+                    setValue((T) current);
+                }
             } else if(defaultValue instanceof Double) {
                 Double current = (Double) getValue();
-                current-=0.5D;
-                setValue((T) current);
+                if(current-0.5D >= (double) minValue) {
+                    current -= 0.5D;
+                    setValue((T) current);
+                }
             }
         }
         if(clickType.isLeftClick()) {
             if(defaultValue instanceof Integer) {
                 Integer current = (Integer) getValue();
-                current+=1;
-                setValue((T) current);
+                if(current+1 <= (int) maxValue) {
+                    current+=1;
+                    setValue((T) current);
+                }
             } else if(defaultValue instanceof Float) {
                 Float current = (Float) getValue();
-                current+=0.5F;
-                setValue((T) current);
+                if(current+0.5F <= (float) maxValue) {
+                    current += 0.5F;
+                    setValue((T) current);
+                }
             } else if(defaultValue instanceof Double) {
                 Double current = (Double) getValue();
-                current+=0.5D;
-                setValue((T) current);
+                if(current+0.5D <= (double) maxValue) {
+                    current += 0.5D;
+                    setValue((T) current);
+                }
             }
         }
         ItemStack itemStack = event.getCurrentItem();
